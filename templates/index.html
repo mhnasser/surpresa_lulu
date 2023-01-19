@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+body {
+   margin: 0;
+   background-image: url(static/images/banner.jpg);
+   background-size: cover;
+}
+</style>
+<div class="jumbotran text-center">
+	<h1>Bem vindo ao Vila Dalí</h1>
+	<p class="lead"> Esperamos que tenha uma experiência incrível</p>
+	{% if session.logged_in==NULL %}
+	<a href="/pedido" class="btn btn-primary btn-lg">Menu</a>
+	{% endif %}
+</div>
+<div id="index-jumbotron"></div>
+{% endblock %}

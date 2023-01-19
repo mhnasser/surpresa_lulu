@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pedido</title>
+    <style>
+    body {
+        margin: 0;
+        background-image: url(static/images/logo_pedido.jpg);
+        background-size: cover;
+    } 
+    #movingButton {
+        background-color:#f30909;
+        border-radius:42px;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Georgia;
+        font-size:20px;
+        font-weight:bold;
+        padding:16px 31px;
+        text-decoration:none;
+        position: absolute;
+        top: 50%;
+        left: 40%;
+    }
+    #staticButton {
+        background-color:#44c767;
+        border-radius:42px;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Georgia;
+        font-size:20px;
+        font-weight:bold;
+        padding:16px 31px;
+        text-decoration:none;
+        position: absolute;
+        top: 50%;
+        left: 40%;
+    }
+    #message {
+        position: absolute;
+        top: 100px;
+        left: 50px;
+        visibility: hidden;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 
+    style="font-size:24px; 
+    font-family: Arial, sans-serif; 
+    text-align:center; 
+    color:blue;">
+    Quer Namorar Comigo?
+    </h1>
+    <button id="movingButton">NÃO</button>
+    <button id="staticButton">SIM</button>
+    <div id="message">Você clicou no botão</div>
+    <script>
+      var movingButton = document.getElementById("movingButton");
+      var staticButton = document.getElementById("staticButton");
+      var message = document.getElementById("message");
+      var intervalId;
+      
+      movingButton.onclick = function() {
+        message.style.visibility = "visible";
+        message.innerHTML = "Você clicou no botão se movendo";
+      }
+      
+      staticButton.onclick = function() {
+        message.style.visibility = "visible";
+        message.innerHTML = "Você clicou no botão parado";
+      }
+      
+      var browserWidth = window.innerWidth;
+      var browserHeight = window.innerHeight;
+      var intervalId;
+      
+      intervalId = setInterval(moveButton, 50);
+      
+      function moveButton() {
+        var x = movingButton.getBoundingClientRect().left;
+        var y = movingButton.getBoundingClientRect().top;
+        var nextX = x + Math.floor(Math.random() * 320) - 150;
+        var nextY = y + Math.floor(Math.random() * 320) - 150;
+        if (nextX > 0 && nextX < browserWidth - 50) {
+          movingButton.style.left = nextX + "px";
+        }
+        if (nextY > 0 && nextY < browserHeight - 50) {
+          movingButton.style.top = nextY + "px";
+        }
+      }
+    </script>
+  </body>
+</html>

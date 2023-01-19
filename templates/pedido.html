@@ -1,0 +1,60 @@
+<style>
+    body {
+       margin: 0;
+       background-image: url(static/images/logo.JPG);
+       background-size: cover;
+    }
+    video {
+        width: 70vw;
+        height: 70vh;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .next-button {
+        display:none;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background:linear-gradient(to bottom, #c2789c 5%, #476e9e 100%);
+        background-color:#c2789c;
+        border-radius:42px;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Times New Roman;
+        font-size:28px;
+        padding:16px 71px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #283966;
+    }
+</style>
+<style>
+    video{
+        display:none;
+    }
+</style>
+
+<video id="video" controls>
+    <source src="static/video/video.mp4" type="video/mp4">
+    <source src="video.ogg" type="video/ogg">
+    Seu navegador não suporta reprodução de vídeo.
+</video>
+
+<a href="/pergunta" class="next-button">Finalmentes</a>
+
+<script>
+    var video = document.getElementById("video");
+    var nextButton = document.querySelector(".next-button");
+
+    video.addEventListener("ended", function() {
+        nextButton.style.display = "block";
+        video.style.display = "none";
+    });
+
+    setTimeout(function(){
+        video.style.display = "inline-block";
+        video.play();
+    }, 3000); 
+</script>
