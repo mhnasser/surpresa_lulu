@@ -1,6 +1,1 @@
-name: supresa_lulu
-channels:
-  - rwest
-  - vgauthier
-  - defaults
-prefix: C:\Users\moham\anaconda3\envs\supresa_lulu
+Flask==1.1.2
