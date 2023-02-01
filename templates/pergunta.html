@@ -21,7 +21,7 @@
         text-decoration:none;
         position: absolute;
         top: 50%;
-        left: 40%;
+        left: 66%;
     }
     #staticButton {
         background-color:#44c767;
@@ -36,7 +36,7 @@
         text-decoration:none;
         position: absolute;
         top: 50%;
-        left: 40%;
+        left: 23%;
     }
     #message {
         position: absolute;
@@ -48,10 +48,10 @@
   </head>
   <body>
     <h1 
-    style="font-size:24px; 
+    style="font-size:30px; 
     font-family: Arial, sans-serif; 
     text-align:center; 
-    color:blue;">
+    color:rgb(0, 0, 0);">
     Quer Namorar Comigo?
     </h1>
     <button id="movingButton">NÃO</button>
@@ -65,20 +65,22 @@
       
       movingButton.onclick = function() {
         message.style.visibility = "visible";
-        message.innerHTML = "Você clicou no botão se movendo";
+        message.innerHTML = "Mano, sério... como conseguiu... eu fiz esse botão muito rápido";
       }
       
       staticButton.onclick = function() {
         message.style.visibility = "visible";
-        message.innerHTML = "Você clicou no botão parado";
+        message.innerHTML = "Uhhuuuuuu!!";
       }
       
       var browserWidth = window.innerWidth;
       var browserHeight = window.innerHeight;
       var intervalId;
       
-      intervalId = setInterval(moveButton, 50);
-      
+      setTimeout(function(){
+        intervalId = setInterval(moveButton, 50);
+      },2000);
+
       function moveButton() {
         var x = movingButton.getBoundingClientRect().left;
         var y = movingButton.getBoundingClientRect().top;
