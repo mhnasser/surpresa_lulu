@@ -22,5 +22,5 @@ def pag_pergunta():
 # Criar a segunda página
 
 # Colocar o site no ar
-app.run(debug=True)
-
+if __name__ == "__main__":
+    app.run(debug=True)
